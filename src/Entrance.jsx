@@ -32,7 +32,7 @@ function InspirationsSlider() {
   )
 }
 
-function StartButton({ updateOriginItemImage }) {
+function StartButton({ updateOriginItem }) {
   const fileInputHandle = useRef(null)
 
   return (
@@ -80,7 +80,7 @@ function StartButton({ updateOriginItemImage }) {
         type='file'
         accept='image/*'
         onChange={ ({ target: { files } }) => {
-          if (files.length >= 1) updateOriginItemImage(files[0])
+          if (files.length >= 1) updateOriginItem(files[0])
         } }
         css={ css`display: none;` }
       />
