@@ -2,10 +2,7 @@ import React from "react";
 import { css } from "@emotion/react";
 import logo from "../assets/logo.png";
 
-export default function SpecficationPage() {
-  const resource = "상의";
-  const result = "모자";
-
+export default function SpecficationPage({ resource, result }) {
   return (
     <div
       css={css`
@@ -88,10 +85,22 @@ export default function SpecficationPage() {
                 height: 30vh;
                 margin-top: 10px;
                 margin-left: 30px;
-                border-radius: 15px;
-                background-color: #f0efef;
               `}
-            ></div>
+            >
+              <textarea
+                css={css`
+                  width: 100%;
+                  height: 100%;
+                  resize: none;
+                  font-family: "BM Dohyeon";
+                  background-color: #f0efef;
+                  border-radius: 15px;
+                  border: 0px;
+                  font-size: 12px;
+                  padding: 8px;
+                `}
+              />
+            </div>
             <div
               css={css`
                 position: relative;
@@ -109,16 +118,18 @@ export default function SpecficationPage() {
                 font-size: 5vh;
                 font-weight: 1000;
                 &:before {
+                  position: absolute;
+                  left: 26px;
                   content: "";
                   display: block;
                   border-radius: 28px;
                   background: rgba(255, 171, 157, 0.5);
-                  width: 56px;
-                  height: 56px;
+                  width: 64px;
+                  height: 64px;
                   transition: all 0.3s ease;
                 }
                 &:hover:before {
-                  width: 100%;
+                  width: 82%;
                   background: rgba(255, 171, 157, 1);
                 }
                 &:active {
@@ -131,6 +142,7 @@ export default function SpecficationPage() {
                   color: black;
                   font-size: 5vh;
                   font-weight: 1000;
+                  z-index: 1;
                 `}
               >
                 Confirm
