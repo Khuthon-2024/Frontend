@@ -10,7 +10,7 @@ import "./RecommendSlide.css";
 import { EffectCoverflow, Pagination } from "swiper/modules";
 import { css, keyframes } from "@emotion/react";
 import blank from "../assets/blank.png";
-import {ImgBox} from './ImgBox';
+import ImgBox from './ImgBox.jsx';
 
 // recos: Array<{ image: string, steps: Array<string> }> image is base64 encoded
 export default function RecommendPage({ recos, retry }) {
