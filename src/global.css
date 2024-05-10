@@ -5,3 +5,12 @@
 #root {
     background-color: grey;
 }
+
+@font-face {
+    font-family: 'BM Dohyeon';
+    src: url('../public/BMDOHYEON_ttf.ttf') format('truetype'), url('../public/BMDOHYEON_otf.otf') format('opentype');
+}
+
+body {
+    font-family: "BM Dohyeon";
+}
