@@ -12,11 +12,11 @@ import { css, keyframes } from "@emotion/react";
 import blank from "../assets/blank.png";
 
 // recos: Array<{ image: string, steps: Array<string> }> image is base64 encoded
-export default function RecommendPage({ recos }) {
+export default function RecommendPage({ recos, retry }) {
   const [isDetailOpen, setisDetailOpen] = useState(false);
 
-  const handleOpenDetail = () => setIsModalOpen(true);
-  const handleCloseDetail = () => setIsModalOpen(false);
+  const handleOpenDetail = () => setisDetailOpen(true);
+  const handleCloseDetail = () => setisDetailOpen(false);
 
   const Detail = ({ isOpen, onClose, steps }) => {
     if (!isOpen) return null;
@@ -49,7 +49,7 @@ export default function RecommendPage({ recos }) {
             e.stopPropagation();
           }}
         >
-          {steps.map((index, step) => (
+          {steps.map((step,index) => (
             <div key={index}>{step}</div>
           ))}
 
@@ -80,6 +80,8 @@ export default function RecommendPage({ recos }) {
   const handleCloseModal = () => setIsModalOpen(false);
 
   const Modal = ({ isOpen, onClose }) => {
+    const [feedback, setFeedback] = useState('')
+
     if (!isOpen) return null;
 
     return (
@@ -131,6 +133,8 @@ export default function RecommendPage({ recos }) {
               font-weight: 1000;
               overflow: auto;
             `}
+            value={feedback}
+            onChange={({ target: {value}}) => setFeedback(value)}
             placeholder="여기에 입력해주세요..." // 사용자에게 입력 힌트 제공
           />
           <div
@@ -145,7 +149,10 @@ export default function RecommendPage({ recos }) {
               }
               text-align: center;
             `}
-            onClick={onClose}
+            onClick={() => {
+              onClose()
+              retry(feedback)
+            }}
           >
             피드백 전송 및 다시 요청
           </div>
@@ -200,9 +207,9 @@ export default function RecommendPage({ recos }) {
         modules={[EffectCoverflow, Pagination]}
         className="mySwiper"
       >
-        {recos.map((url, steps, index) => (
+        {recos.map(({ image, steps }, index) => (
           <SwiperSlide key={index}>
-            <img src={`data:image/jpg;base64,${url}`} alt="img" />
+            <img src={`data:image/png;base64,${image}`} alt="img" onClick={handleOpenDetail}/>
             <Detail isOpen={isDetailOpen} onClose={handleCloseDetail} steps={steps} />
           </SwiperSlide>
         ))}

@@ -93,7 +93,34 @@ function App() {
         />
       </Route>
       <Route path="/reco">
-        <RecommendPage recos={recos} />
+        <RecommendPage recos={recos} feedback={detail => {
+          setSpinnerState(true);
+
+          fetch("http://localhost:8000/beseo", {
+            method: "POST",
+            body: JSON.stringify({
+              detail,
+            }),
+          })
+            .then((res) => res.json())
+            .then(({ preferred_style }) => {
+              const temp = new FormData();
+              temp.append("originImage", originImage);
+              temp.append("style", preferred_style);
+              temp.append("goal", goal);
+
+              return fetch("http://localhost:8000/stylednn", {
+                method: "POST",
+                body: temp,
+              });
+            })
+            .then((res) => res.json()) // base64 as result
+            .then((recos) => {
+              setSpinnerState(false);
+
+              setRecos(recos);
+            });
+        }} />
       </Route>
     </>
   );
