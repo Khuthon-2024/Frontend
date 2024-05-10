@@ -7,7 +7,7 @@ import MainBackgroundImage from './assets/main-bg.png'
 import './slider.css'
 
 //@TODO
-function InspirationsSlider({ className }) {
+function InspirationsSlider() {
   return (
     <div
       css={ css`
@@ -20,7 +20,7 @@ function InspirationsSlider({ className }) {
         
         margin-bottom: 2px;
       `}
-      className={ className }>
+      >
       <div className="slider">
         <span className="slide">청바지로 만든 지갑</span>
         <span className="slide">비닐봉투로 만든 방석</span>
