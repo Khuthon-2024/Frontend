@@ -70,7 +70,7 @@ export default function RecommendPage({ recos }) {
               font-weight: 1000;
               overflow: auto;
             `}
-            placeholder="여기에 입력하세요..." // 사용자에게 입력 힌트 제공
+            placeholder="여기에 입력해주세요..." // 사용자에게 입력 힌트 제공
           />
           <div
             css={css`
@@ -139,9 +139,9 @@ export default function RecommendPage({ recos }) {
         modules={[EffectCoverflow, Pagination]}
         className="mySwiper"
       >
-        {[...Array(10)].map((_, index) => (
+        {recos.map((url, index) => (
           <SwiperSlide key={index}>
-            <img src={blank} alt="Blank" />
+            <img src={`data:image/jpg;base64,${url}`} alt="img" />
           </SwiperSlide>
         ))}
       </Swiper>
