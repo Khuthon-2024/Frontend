@@ -46,6 +46,7 @@ export default function DetailBox({ data, steps, showDetail, hideDetail }) {
             flex-direction:column;
             gap:10px;
             margin-top: 50px;
+            line-height: 1.3;
           ` }>
             { steps.map((step, index) => (
               <div key={ index }>{ step }</div>
