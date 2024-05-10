@@ -65,7 +65,30 @@ export default function SpecficationPage({ resource, result, setResult, detail, 
             `}
           >
             <div>원재료: {resource}</div>
-            <div>원하는 결과물: <input onChange={({ target: { value }}) => setResult(value)} /></div>
+            <div
+              css={css`
+                display: flex;
+                align-items: center;
+                gap: 10px;
+              `}
+            >
+              <div>원하는 결과물: </div>
+              <input
+                onChange={({ target: { value } }) => setResult(value)}
+                css={css`
+                  width: 50%;
+                  height: 100%;
+                  resize: none;
+                  font-family: "BM Dohyeon";
+                  background-color: #f0efef;
+                  border-radius: 15px;
+                  border: 0px;
+                  font-size: 12px;
+                  padding: 10px;
+                  text-align: center;
+                `}
+              />
+            </div>
           </div>
 
           <div>
@@ -96,10 +119,10 @@ export default function SpecficationPage({ resource, result, setResult, detail, 
                   background-color: #f0efef;
                   border-radius: 15px;
                   border: 0px;
-                  font-size: 12px;
-                  padding: 8px;
+                  font-size: 18px;
+                  padding: 18px;
                 `}
-                onChange={({ target: {value}}) => setDetail(value)}
+                onChange={({ target: { value } }) => setDetail(value)}
                 value={detail}
               />
             </div>
@@ -125,14 +148,14 @@ export default function SpecficationPage({ resource, result, setResult, detail, 
                   content: "";
                   display: block;
                   border-radius: 28px;
-                  background: rgba(255, 171, 157, 0.5);
+                  background: #788d647f;
                   width: 64px;
                   height: 64px;
                   transition: all 0.3s ease;
                 }
                 &:hover:before {
                   width: 82%;
-                  background: rgba(255, 171, 157, 1);
+                  background: #788d64;
                 }
                 &:active {
                   transform: scale(0.96);
@@ -143,7 +166,7 @@ export default function SpecficationPage({ resource, result, setResult, detail, 
                 onClick={sendRequest}
                 css={css`
                   color: black;
-                  font-size: 5vh;
+                  font-size: 3.5vh;
                   font-weight: 1000;
                   z-index: 1;
                 `}
