@@ -1,75 +1,144 @@
 import React from "react";
-import "./specStyle.css";
+import { css } from "@emotion/react";
+import logo from "../assets/logo.png";
 
 export default function SpecficationPage() {
+  const resource = "상의";
+  const result = "모자";
+
   return (
-    <div>
-      <div className="wrapper">
-        <h1>Letter-like form with inline fields</h1>
-
-        <form className="form__contact" action="">
-          <fieldset>
-            <p>Hey, Stranger!</p>
-            <p>
-              My name is{" "}
-              <span
-                className="form__field field--name"
-                data-placeholder="your name"
-                tabIndex="1"
-                contentEditable
-              ></span>{" "}
-              and I'm writting to you since I'm interested in{" "}
-              <span
-                className="form__field field--message"
-                data-placeholder="your message"
-                tabIndex="2"
-                contentEditable
-              ></span>
-              .
-            </p>
-            <p>
-              This is my{" "}
-              <span
-                className="form__field field--email"
-                data-placeholder="email address"
-                tabIndex="3"
-                contentEditable
-              ></span>
-              .
-            </p>
-            <p>Hope to get in touch soon. Cheers!</p>
-            <button type="submit" className="button button--xlarge" tabIndex="4">
-              Send message &#187;
-            </button>
-          </fieldset>
-        </form>
-      </div>
-
-      <svg
-        version="1.1"
-        id="Layer_1"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlnsXlink="http://www.w3.org/1999/xlink"
-        xmlSpace="preserve"
+    <div
+      css={css`
+        height: 100%;
+        background-color: #788d64;
+      `}
+    >
+      <img
+        css={css`
+          width: 100%;
+          padding-top: 10%;
+        `}
+        src={logo}
+        alt="로고사진"
+      />
+      <div
+        css={css`
+          height: 100%;
+          display: flex;
+          justify-content: center;
+        `}
       >
-        <defs>
-          <filter id="blur0">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="0 0" />
-          </filter>
-          <filter id="blur1">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="0 5" />
-          </filter>
-          <filter id="blur2">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="0 10" />
-          </filter>
-          <filter id="blur3">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="0 15" />
-          </filter>
-          <filter id="blur4">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="0 20" />
-          </filter>
-        </defs>
-      </svg>
+        <div
+          css={css`
+            width: 80%;
+            height: 70%;
+            background-color: white;
+            -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+            -moz-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+            -ms-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+            -o-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+          `}
+        >
+          <div
+            css={css`
+              font-weight: bold;
+              text-align: center;
+              font-size: 35px;
+              margin-top: 20px;
+            `}
+          >
+            Request
+          </div>
+          <hr
+            css={css`
+              width: 80%;
+              margin-top: 20px;
+            `}
+          />
+          <div
+            css={css`
+              display: flex;
+              flex-direction: column;
+              gap: 30px;
+              margin: 40px 30px;
+              margin-bottom: 0px;
+              font-weight: 600;
+              font-size: 20px;
+            `}
+          >
+            <div>원재료: {resource}</div>
+            <div>원하는 결과물: {result}</div>
+          </div>
+
+          <div>
+            <div
+              css={css`
+                font-weight: 600;
+                font-size: 20px;
+                margin: 0px 30px;
+                margin-top: 30px;
+              `}
+            >
+              원하는 스타일
+            </div>
+            <div
+              css={css`
+                width: 30.5vh;
+                height: 30vh;
+                margin-top: 10px;
+                margin-left: 30px;
+                border-radius: 15px;
+                background-color: #f0efef;
+              `}
+            ></div>
+            <div
+              css={css`
+                position: relative;
+                margin: auto;
+                padding: 19px 22px;
+                transition: all 0.2s ease;
+                width: 30.5vh;
+                height: 10vh;
+                margin-top: 10px;
+                margin-left: 30px;
+                border-radius: 15px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 5vh;
+                font-weight: 1000;
+                &:before {
+                  content: "";
+                  display: block;
+                  border-radius: 28px;
+                  background: rgba(255, 171, 157, 0.5);
+                  width: 56px;
+                  height: 56px;
+                  transition: all 0.3s ease;
+                }
+                &:hover:before {
+                  width: 100%;
+                  background: rgba(255, 171, 157, 1);
+                }
+                &:active {
+                  transform: scale(0.96);
+                }
+              `}
+            >
+              <div
+                css={css`
+                  color: black;
+                  font-size: 5vh;
+                  font-weight: 1000;
+                `}
+              >
+                Confirm
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
