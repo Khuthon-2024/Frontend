@@ -11,7 +11,7 @@ export const ViewBox = ({ children }) => (
       left: 50%;
       transform: translate(-50%, -50%);
       
-      background-color: white;
+      background-color: ivory;
     `}
   >
     {children}
