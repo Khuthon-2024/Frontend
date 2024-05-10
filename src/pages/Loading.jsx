@@ -9,10 +9,10 @@ const override = {
   textAlign: "center",
 };
 
-const Loading = ({ loading }) => {
+const Loading = () => {
   return (
     <div>
-      <PuffLoader color="#788d64" loading={loading} cssOverride={override} size={150} />
+      <PuffLoader color="#788d64" loading={true} cssOverride={override} size={150} />
     </div>
   );
 };

@@ -2,7 +2,7 @@ import React from "react";
 import { css } from "@emotion/react";
 import logo from "../assets/logo.png";
 
-export default function SpecficationPage({ resource, result }) {
+export default function SpecficationPage({ resource, result, setResult, detail, setDetail, sendRequest }) {
   return (
     <div
       css={css`
@@ -65,7 +65,7 @@ export default function SpecficationPage({ resource, result }) {
             `}
           >
             <div>원재료: {resource}</div>
-            <div>원하는 결과물: {result}</div>
+            <div>원하는 결과물: <input onChange={({ target: { value }}) => setResult(value)} /></div>
           </div>
 
           <div>
@@ -99,6 +99,8 @@ export default function SpecficationPage({ resource, result }) {
                   font-size: 12px;
                   padding: 8px;
                 `}
+                onChange={({ target: {value}}) => setDetail(value)}
+                value={detail}
               />
             </div>
             <div
@@ -138,6 +140,7 @@ export default function SpecficationPage({ resource, result }) {
               `}
             >
               <div
+                onClick={sendRequest}
                 css={css`
                   color: black;
                   font-size: 5vh;
