@@ -17,6 +17,8 @@ function InspirationsSlider({ className }) {
         font-size: 24px;
         
         z-index: 2;
+        
+        margin-bottom: 2px;
       `}
       className={ className }>
       <div className="slider">
