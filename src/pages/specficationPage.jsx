@@ -69,7 +69,7 @@ export default function SpecficationPage({ resource, result, setResult, detail, 
               css={css`
                 display: flex;
                 align-items: center;
-                gap: 10px;
+                gap: 5px;
               `}
             >
               <div>원하는 결과물: </div>
@@ -134,17 +134,16 @@ export default function SpecficationPage({ resource, result, setResult, detail, 
                 transition: all 0.2s ease;
                 width: 30.5vh;
                 height: 10vh;
-                margin-top: 10px;
                 margin-left: 30px;
                 border-radius: 15px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                font-size: 5vh;
+                font-size: 32px;
                 font-weight: 1000;
                 &:before {
                   position: absolute;
-                  left: 26px;
+                  left: 44px;
                   content: "";
                   display: block;
                   border-radius: 28px;
@@ -154,12 +153,13 @@ export default function SpecficationPage({ resource, result, setResult, detail, 
                   transition: all 0.3s ease;
                 }
                 &:hover:before {
-                  width: 82%;
+                  width: 70%;
                   background: #788d64;
                 }
                 &:active {
                   transform: scale(0.96);
                 }
+                
               `}
             >
               <div
