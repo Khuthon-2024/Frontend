@@ -65,7 +65,29 @@ export default function SpecficationPage({ resource, result }) {
             `}
           >
             <div>원재료: {resource}</div>
-            <div>원하는 결과물: {result}</div>
+            <div
+              css={css`
+                display: flex;
+                align-items: center;
+              `}
+            >
+              <div>원하는 결과물: </div>
+              <textarea
+                css={css`
+                  width: 50%;
+                  resize: none;
+                  font-family: "BM Dohyeon";
+                  background-color: #f0efef;
+                  border-radius: 15px;
+                  border: 0px;
+                  font-size: 18px;
+                  padding: 3px;
+                  margin-left: 5px;
+                  text-align: center;
+                  align-content: center;
+                `}
+              />
+            </div>
           </div>
 
           <div>
@@ -90,14 +112,14 @@ export default function SpecficationPage({ resource, result }) {
               <textarea
                 css={css`
                   width: 100%;
-                  height: 100%;
+                  height: 90%;
                   resize: none;
                   font-family: "BM Dohyeon";
                   background-color: #f0efef;
                   border-radius: 15px;
                   border: 0px;
-                  font-size: 12px;
-                  padding: 8px;
+                  font-size: 18px;
+                  padding: 20px;
                 `}
               />
             </div>
@@ -109,13 +131,11 @@ export default function SpecficationPage({ resource, result }) {
                 transition: all 0.2s ease;
                 width: 30.5vh;
                 height: 10vh;
-                margin-top: 10px;
                 margin-left: 30px;
                 border-radius: 15px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                font-size: 5vh;
                 font-weight: 1000;
                 &:before {
                   position: absolute;
@@ -123,14 +143,14 @@ export default function SpecficationPage({ resource, result }) {
                   content: "";
                   display: block;
                   border-radius: 28px;
-                  background: rgba(255, 171, 157, 0.5);
+                  background: #788d647f;
                   width: 64px;
                   height: 64px;
                   transition: all 0.3s ease;
                 }
                 &:hover:before {
                   width: 82%;
-                  background: rgba(255, 171, 157, 1);
+                  background: #788d64;
                 }
                 &:active {
                   transform: scale(0.96);
