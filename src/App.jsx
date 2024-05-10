@@ -93,7 +93,7 @@ function App() {
         />
       </Route>
       <Route path="/reco">
-        <RecommendPage recos={recos} feedback={detail => {
+        <RecommendPage recos={recos} retry={detail => {
           setSpinnerState(true);
 
           fetch("http://localhost:8000/beseo", {

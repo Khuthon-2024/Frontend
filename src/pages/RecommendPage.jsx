@@ -15,6 +15,7 @@ import ImgBox from './ImgBox.jsx';
 // recos: Array<{ image: string, steps: Array<string> }> image is base64 encoded
 export default function RecommendPage({ recos, retry }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [detail, setDetail] = useState(null)
 
   const handleOpenModal = () => setIsModalOpen(true);
   const handleCloseModal = () => setIsModalOpen(false);
@@ -145,11 +146,10 @@ export default function RecommendPage({ recos, retry }) {
         }}
         pagination={true}
         modules={[EffectCoverflow, Pagination]}
-        className="mySwiper"
       >
         {recos.map(({ image, steps }, index) => (
           <SwiperSlide key={index}>
-            <ImgBox data={`data:image/png;base64,${image}`}/>
+            <ImgBox data={`data:image/png;base64,${image}`} steps={steps} showDetail={setDetail} hideDetail={() => setDetail(null)}/>
           </SwiperSlide>
         ))}
       </Swiper>
@@ -184,6 +184,7 @@ export default function RecommendPage({ recos, retry }) {
         </div>
       </div>
       <Modal isOpen={isModalOpen} onClose={handleCloseModal} />
+      {detail}
     </div>
   );
 }
