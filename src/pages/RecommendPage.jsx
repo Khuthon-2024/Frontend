@@ -11,7 +11,8 @@ import { EffectCoverflow, Pagination } from "swiper/modules";
 import { css, keyframes } from "@emotion/react";
 import blank from "../assets/blank.png";
 
-export default function RecommendPage() {
+// recos: Array<{ image: string, steps: Array<string> }> image is base64 encoded
+export default function RecommendPage({ recos }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleOpenModal = () => setIsModalOpen(true);
