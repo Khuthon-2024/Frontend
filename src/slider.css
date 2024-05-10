@@ -1,0 +1,64 @@
+.slider {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    left: 0;
+    top: 0;
+    white-space: nowrap;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+
+.slide:nth-child(1) {
+    animation: slide1 10s infinite;
+}
+@keyframes slide1 {
+    0% { opacity: 0; transform: translateY(-5%); }
+    4%, 16% { opacity: 1; transform: translateY(0); }
+    20%, 100% { opacity: 0; transform: translateY(5%); }
+}
+
+.slide:nth-child(2) {
+    animation: slide2 10s infinite;
+}
+@keyframes slide2 {
+    0%, 20% { opacity: 0; transform: translateY(-5%); }
+    24%, 36% { opacity: 1; transform: translateY(0); }
+    40%, 100% { opacity: 0; transform: translateY(5%); }
+}
+
+.slide:nth-child(3) {
+    animation: slide3 10s infinite;
+}
+@keyframes slide3 {
+    0%, 40% { opacity: 0; transform: translateY(-5%); }
+    44%, 56% { opacity: 1; transform: translateY(0); }
+    60%, 100% { opacity: 0; transform: translateY(5%); }
+}
+
+.slide:nth-child(4) {
+    animation: slide4 10s infinite;
+}
+@keyframes slide4 {
+    0%, 60% { opacity: 0; transform: translateY(-5%); }
+    64%, 76% { opacity: 1; transform: translateY(0); }
+    80%, 100% { opacity: 0; transform: translateY(5%); }
+}
+
+.slide:nth-child(5) {
+    animation: slide5 10s infinite;
+}
+@keyframes slide5 {
+    0%, 80% { opacity: 0; transform: translateY(-5%); }
+    84%, 96% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(5%); }
+}
