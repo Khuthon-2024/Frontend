@@ -39,7 +39,7 @@ function StartButton({ updateOriginItemImage }) {
       css={ css`
         
         width: 70%;
-        height: 10%;
+        height: 8.5%;
       
         display: flex;
         align-items: center;
@@ -47,7 +47,7 @@ function StartButton({ updateOriginItemImage }) {
         flex-direction: column;
         
         border: 1px solid grey;
-        border-radius: 5px;
+        border-radius: 50px;
         padding: 3px;
         cursor: pointer;
         
