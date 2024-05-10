@@ -8,7 +8,7 @@ import "swiper/css/pagination";
 import "./RecommendSlide.css";
 // import required modules
 import { EffectCoverflow, Pagination } from "swiper/modules";
-import { css } from "@emotion/react";
+import { css, keyframes } from "@emotion/react";
 import blank from "../assets/blank.png";
 
 export default function RecommendPage() {
@@ -44,6 +44,9 @@ export default function RecommendPage() {
             width: 75%;
             height: 35%;
           `}
+          onClick={(e) => {
+            e.stopPropagation();
+          }}
         >
           <div
             css={css`
@@ -89,15 +92,32 @@ export default function RecommendPage() {
     );
   };
 
+  const textclip = keyframes`
+  to {
+    background-position: 200% center;
+  }
+`;
+
   return (
     <div>
       <div
         css={css`
-          font-size: 50px;
+          font-size: 55px;
           font-weight: 1000;
-          margin: 100px 0px;
+          margin: 130px 38px;
           text-align: center;
           color: #788d64;
+          text-transform: uppercase;
+          background-image: linear-gradient(-225deg, #a2c579 0%, #d2de32 29%, #d2de32 67%, #a2c579 100%);
+          background-size: auto auto;
+          background-clip: border-box;
+          background-size: 200% auto;
+          color: #fff;
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          animation: ${textclip} 2s linear infinite;
+          display: inline-block;
         `}
       >
         Recommend
